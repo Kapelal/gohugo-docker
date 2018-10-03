@@ -10,10 +10,8 @@ RUN \
   && mv hugo /bin/hugo \
   && chmod +x /bin/hugo
 
-USER    hugo
 WORKDIR /site
 VOLUME  /site
 EXPOSE  1313
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--", "top"]
-#CMD [ "server -D" ]
+ENTRYPOINT ["/usr/bin/dumb-init", "--", "hugo"]
